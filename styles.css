@@ -1,0 +1,69 @@
+body {
+	font-family: sans-serif;
+	margin: 1em;
+}
+
+iframe {
+	height: 200px;
+	width: 100%;
+}
+
+.invader-container {
+	position: relative;
+	height: 200px;
+}
+
+label.block {
+	display: block;
+}
+
+#gif {
+	position: absolute;
+	right: 1em;
+}
+
+#invader {
+	position: absolute;
+	display: block;
+	width: 200px;
+	left: 50%;
+	margin-left: -100px;
+	animation: move 2s ease-in-out 0s infinite alternate;
+}
+
+#hardware:checked ~ #invader {
+	animation-name: movehw;
+}
+
+#invader path {
+	stroke-width: 0;
+	fill: #080;
+	animation: flash 1s linear 0s infinite alternate;
+}
+
+@keyframes move {
+	0% {
+		margin-left: -400px;
+	}
+	100% {
+		margin-left: 200px;
+	}
+}
+
+@keyframes movehw {
+	0% {
+		transform: translateX(-300px);
+	}
+	100% {
+		transform: translateX(300px);
+	}
+}
+
+@keyframes flash {
+	0% {
+		opacity: 1;
+	}
+	0% {
+		opacity: 0.6;
+	}
+}
